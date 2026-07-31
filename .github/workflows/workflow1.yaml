@@ -1,7 +1,7 @@
-name: First Workflow
+name: Resuable Workflow
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       image_tag: 
         required: true
@@ -13,8 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      
 
       - name: building docker file
         run: docker build -t nginximage:${{github.event.inputs.image_tag}} .
