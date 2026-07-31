@@ -13,7 +13,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
-
       - name: building docker file
         run: docker build -t nginximage:${{github.event.inputs.image_tag}} .
