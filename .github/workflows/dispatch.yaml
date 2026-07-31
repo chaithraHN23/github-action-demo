@@ -10,6 +10,6 @@ on:
 
 jobs:
   trigger-build:
-    uses: .github\workflows\workflow1.yaml
+    uses:./.github\workflows\workflow1.yaml
     with: 
       image_tag: ${{ github.event.inputs.image_tag}}
