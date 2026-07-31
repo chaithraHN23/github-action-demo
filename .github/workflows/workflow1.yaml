@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       image_tag: 
-        description: " docker image tag"
         required: true
-        default: latest  
+        default: latest 
+        type: string 
 
 jobs:
   build:
