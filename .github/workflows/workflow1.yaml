@@ -1,9 +1,12 @@
 name: First Workflow
 
 on:
-  push:
-    branches:
-      - main 
+  workflow_dispatch:
+    inputs:
+      image_tag: 
+        description: " docker image tag"
+        required: true
+        default: latest  
 
 jobs:
   build:
@@ -14,4 +17,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: building docker file
-        run: docker build -t nginximage:v1 .
+        run: docker build -t nginximage:${{github.event.inputs.image_tag}} .
