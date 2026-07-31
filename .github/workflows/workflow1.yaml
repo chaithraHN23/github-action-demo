@@ -13,5 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: ckeckout code
+        uses: action/checkout@v4
       - name: building docker file
         run: docker build -t nginximage:${{github.event.inputs.image_tag}} .
