@@ -6,10 +6,10 @@ on:
       image_tag: 
         description: " docker image tag"
         required: true
-        default: latest  
+        default: "latest"  
 
 jobs:
   trigger-build:
-    uses:./.github\workflows\workflow1.yaml
+    uses: ./.github/workflows/workflow1.yaml
     with: 
       image_tag: ${{ github.event.inputs.image_tag}}
